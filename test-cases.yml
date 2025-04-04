@@ -1,0 +1,311 @@
+---
+- summary: |
+    Успешная регистрация пользователя
+  requirement: |
+    При введении никнейма, имейла и пароля пользователь должен войти в систему
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+
+- summary: |
+    Неудачная регистрация пользователя с существующим никнеймом
+  requirement: |
+    При введении существующего никнейма пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = nickname_4_tests / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Nickname is already taken"
+
+- summary: |
+    Неудачная регистрация пользователя с пустым никнеймом
+  requirement: |
+    При оставлении пустого поля с никнеймом пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = "" / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Nickname required"
+
+- summary: |
+    Неудачная регистрация пользователя с никнеймом короче требуемого
+  requirement: |
+    При введении никнейма короче 3 символов пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = ni / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should be from 3 to 16 characters"
+
+- summary: |
+    Неудачная регистрация пользователя с никнеймом длиннее требуемого
+  requirement: |
+    При введении никнейма длиннее 16 символов пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname_12345678 / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should be from 3 to 16 characters"
+
+- summary: |
+    Неудачная регистрация пользователя с кириллицей в никнейме
+  requirement: |
+    При введении никнейма с кириллицей пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname_ф / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should contain Latin letters, numbers and underscores. Only begin with latin letter"
+
+- summary: |
+    Неудачная регистрация пользователя без латинской буквы в начале никнейма
+  requirement: |
+    При введении никнейма без латинской буквы в начале пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = 1nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should contain Latin letters, numbers and underscores. Only begin with latin letter"
+
+- summary: |
+    Неудачная регистрация пользователя с существующим имейлом
+  requirement: |
+    При введении существующего имейла пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  test-data: |
+    nickname = nickname_123456 / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Email is already taken"
+
+- summary: |
+    Неудачная регистрация пользователя с пустым имейлом
+  requirement: |
+    При оставлении пустого поля с имейлом пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = "" / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Email required"
+
+- summary: |
+    Неудачная регистрация пользователя с невалидным имейлом (без домена)
+  requirement: |
+    При введении невалидного имейла (без домена) пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@ / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Invalid email"
+
+- summary: |
+    Неудачная регистрация пользователя с невалидным имейлом (без локальной части)
+  requirement: |
+    При введении невалидного имейла (без локальной части) пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = @gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Invalid email"
+
+- summary: |
+    Неудачная регистрация пользователя с пустым паролем
+  requirement: |
+    При оставлении пустого поля с паролем пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = "" / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Password required"
+
+- summary: |
+    Неудачная регистрация пользователя с паролем короче требуемого
+  requirement: |
+    При введении пароля короче требуемого пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = pas / password confirmation = pas
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should be from 6 to 16 characters"
+
+- summary: |
+    Неудачная регистрация пользователя с паролем длиннее требуемого
+  requirement: |
+    При введении пароля длиннее требуемого пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = password123456789 / password confirmation = password123456789
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should be from 6 to 16 characters"
+
+- summary: |
+    Неудачная регистрация пользователя с паролем без спецсимвола
+  requirement: |
+    При введении пароля без спецсимвола пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = passw0rd / password confirmation = passw0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should contain at least one special character"
+
+- summary: |
+    Неудачная регистрация пользователя с пустым подтверждением пароля
+  requirement: |
+    При оставлении пустого поля с подтверждением пароля пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = passw0rd / password confirmation = ""
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Confirmation required"
+
+- summary: |
+    Неудачная регистрация пользователя с несовпадающим подтверждением пароля
+  requirement: |
+    При введении несовпадающего подтверждения пароля пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = passw0rd
+  steps:
+    - Нажать на кнопку "Sign Up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Passwords must match"
+
+# авторизация: - по аккаунту
+#              - по Гитхабу
+#              - по Дискорду
+
+# восстановление пароля: - успешное
+#                        - по несуществующей почте
