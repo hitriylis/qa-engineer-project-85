@@ -6,7 +6,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -23,9 +26,12 @@
     При введении существующего никнейма пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
-    nickname = nickname_4_tests / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    nickname = nickname
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -43,7 +49,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = "" / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = ""
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести имейл
@@ -60,7 +69,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = ni / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = ni
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -78,7 +90,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname_12345678 / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname_12345678
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -96,7 +111,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname_ф / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname_ф
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -114,7 +132,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = 1nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = 1_nickname
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -131,9 +152,12 @@
     При введении существующего имейла пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   test-data: |
-    nickname = nickname_123456 / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname_123456
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -151,7 +175,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = "" / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname
+    email = ""
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -168,7 +195,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@ / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname
+    email = example@
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -186,7 +216,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = @gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    nickname = nickname
+    email = @gmail.com
+    password = pas$w0rd
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -204,7 +237,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = "" / password confirmation = pas$w0rd
+    nickname = nickname
+    email = example@gmail.com
+    password = ""
+    password confirmation = pas$w0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -221,7 +257,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = pas / password confirmation = pas
+    nickname = nickname
+    email = example@gmail.com
+    password = pas
+    password confirmation = pas
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -239,7 +278,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = password123456789 / password confirmation = password123456789
+    nickname = nickname
+    email = example@gmail.com
+    password = password123456789
+    password confirmation = password123456789
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -257,7 +299,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = passw0rd / password confirmation = passw0rd
+    nickname = nickname
+    email = example@gmail.com
+    password = passw0rd
+    password confirmation = passw0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -275,7 +320,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = passw 0rd / password confirmation = passw 0rd
+    nickname = nickname
+    email = example@gmail.com
+    password = passw 0rd
+    password confirmation = passw 0rd
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -293,7 +341,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = passw0rd / password confirmation = ""
+    nickname = nickname
+    email = example@gmail.com
+    password = passw0rd
+    password confirmation = ""
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -310,7 +361,10 @@
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
   test-data: |
-    nickname = nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = passw0rd
+    nickname = nickname
+    email = example@gmail.com
+    password = pas$w0rd
+    password confirmation = pas$word
   steps:
     - Нажать на кнопку "Sign up"
     - Ввести никнейм
@@ -327,9 +381,10 @@
     При введении имейла и пароля пользователь должен войти в систему
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
-    email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+    email = example@gmail.com
+    password = pas$w0rd
   steps:
     - Нажать на кнопку "Sign in"
     - Ввести имейл
@@ -374,9 +429,10 @@
     При оставлении пустого поля с имейлом пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
-    email = "" / password = pas$w0rd
+    email = ""
+    password = pas$w0rd
   steps:
     - Нажать на кнопку "Sign in"
     - Ввести пароль
@@ -390,9 +446,10 @@
     При оставлении пустого поля с паролем пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
-    email = examplemail4tests@gmail.com / password = ""
+    email = example@gmail.com
+    password = ""
   steps:
     - Нажать на кнопку "Sign in"
     - Ввести имейл
@@ -406,9 +463,10 @@
     При введении незарегистрированного имейла пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
-    email = example@example.com / password = pas$w0rd
+    email = example@example.com
+    password = pas$w0rd
   steps:
     - Нажать на кнопку "Sign in"
     - Ввести имейл
@@ -423,9 +481,9 @@
     При восстановлении пароля через форму "Reset your password" пользователь должен войти в систему с новым паролем
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
-    email = examplemail4tests@gmail.com
+    email = example@gmail.com
     password = pas$word
   steps:
     - Нажать на кнопку "Sign in"
@@ -450,7 +508,7 @@
     При оставлении пустого поля с имейлом пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
     email = ""
   steps:
@@ -466,7 +524,7 @@
     При введении невалидного имейла (без домена) пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
     email = example@
   steps:
@@ -482,7 +540,7 @@
     При введении невалидного имейла (без локальной части) пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
     email = @gmail.com
   steps:
@@ -498,7 +556,7 @@
     При введении незарегистрированного имейла пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   test-data: |
     email = example@example.com
   steps:
@@ -514,9 +572,9 @@
     При оставлении пустого поля с паролем пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
-    email = examplemail4tests@gmail.com
+    email = example@gmail.com
     password = ""
   steps:
     - Нажать на кнопку "Sign in"
@@ -536,9 +594,9 @@
     При введении пароля короче требуемого пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
-    email = examplemail4tests@gmail.com
+    email = example@gmail.com
     password = pas
   steps:
     - Нажать на кнопку "Sign in"
@@ -558,9 +616,9 @@
     При введении пароля длиннее требуемого пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
-    email = examplemail4tests@gmail.com
+    email = example@gmail.com
     password = pas$word123456789
   steps:
     - Нажать на кнопку "Sign in"
@@ -580,9 +638,9 @@
     При введении пароля без спецсимвола пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
-    email = examplemail4tests@gmail.com
+    email = example@gmail.com
     password = password
   steps:
     - Нажать на кнопку "Sign in"
@@ -602,9 +660,9 @@
     При введении пароля с пробелом пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+    Зарегистрирован пользователь с данными: nickname = nickname / email = example@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
-    email = examplemail4tests@gmail.com
+    email = example@gmail.com
     password = pass word
   steps:
     - Нажать на кнопку "Sign in"
