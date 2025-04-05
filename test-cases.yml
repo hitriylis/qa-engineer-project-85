@@ -8,7 +8,7 @@
   test-data: |
     nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -27,7 +27,7 @@
   test-data: |
     nickname = nickname_4_tests / email = example@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -45,7 +45,7 @@
   test-data: |
     nickname = "" / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести имейл
     - Ввести пароль
     - Ввести подтверждение пароля
@@ -62,7 +62,7 @@
   test-data: |
     nickname = ni / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -80,7 +80,7 @@
   test-data: |
     nickname = nickname_12345678 / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -98,7 +98,7 @@
   test-data: |
     nickname = nickname_ф / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -116,7 +116,7 @@
   test-data: |
     nickname = 1nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -135,7 +135,7 @@
   test-data: |
     nickname = nickname_123456 / email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -153,7 +153,7 @@
   test-data: |
     nickname = nickname / email = "" / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести пароль
     - Ввести подтверждение пароля
@@ -170,7 +170,7 @@
   test-data: |
     nickname = nickname / email = example@ / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -188,7 +188,7 @@
   test-data: |
     nickname = nickname / email = @gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -206,7 +206,7 @@
   test-data: |
     nickname = nickname / email = example@gmail.com / password = "" / password confirmation = pas$w0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести подтверждение пароля
@@ -223,7 +223,7 @@
   test-data: |
     nickname = nickname / email = example@gmail.com / password = pas / password confirmation = pas
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -241,7 +241,7 @@
   test-data: |
     nickname = nickname / email = example@gmail.com / password = password123456789 / password confirmation = password123456789
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -259,7 +259,7 @@
   test-data: |
     nickname = nickname / email = example@gmail.com / password = passw0rd / password confirmation = passw0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -267,6 +267,24 @@
     - Нажать на кнопку "Submit"
   expected-result: |
     Пользователь должен получить сообщение с ошибкой "Should contain at least one special character"
+
+- summary: |
+    Неудачная регистрация пользователя с пробелом в пароле
+  requirement: |
+    При введении пароля с пробелом пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+  test-data: |
+    nickname = nickname / email = example@gmail.com / password = passw 0rd / password confirmation = passw 0rd
+  steps:
+    - Нажать на кнопку "Sign up"
+    - Ввести никнейм
+    - Ввести имейл
+    - Ввести пароль
+    - Ввести подтверждение пароля
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Can't contain empty symbols"
 
 - summary: |
     Неудачная регистрация пользователя с пустым подтверждением пароля
@@ -277,7 +295,7 @@
   test-data: |
     nickname = nickname / email = example@gmail.com / password = passw0rd / password confirmation = ""
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -294,7 +312,7 @@
   test-data: |
     nickname = nickname / email = example@gmail.com / password = pas$w0rd / password confirmation = passw0rd
   steps:
-    - Нажать на кнопку "Sign Up"
+    - Нажать на кнопку "Sign up"
     - Ввести никнейм
     - Ввести имейл
     - Ввести пароль
@@ -303,9 +321,299 @@
   expected-result: |
     Пользователь должен получить сообщение с ошибкой "Passwords must match"
 
-# авторизация: - по аккаунту
-#              - по Гитхабу
-#              - по Дискорду
+- summary: |
+    Успешная аутентификация пользователя по имейлу и паролю
+  requirement: |
+    При введении имейла и пароля пользователь должен войти в систему
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = examplemail4tests@gmail.com / password = pas$w0rd / password confirmation = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Ввести имейл
+    - Ввести пароль
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
 
-# восстановление пароля: - успешное
-#                        - по несуществующей почте
+- summary: |
+    Успешная аутентификация пользователя по аккаунту GitHub
+  requirement: |
+    При аутентификация по аккаунту GitHub пользователь должен войти в систему
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован аккаунт на GitHub
+  test-data: ""
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на кнопку "Sign in with Github"
+    - Нажать на кнопку "Authorize vtm9"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+
+- summary: |
+    Успешная аутентификация пользователя по аккаунту Discord
+  requirement: |
+    При аутентификация по аккаунту Discord пользователь должен войти в систему
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован аккаунт на Discord
+  test-data: ""
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на кнопку "Sign in with Discord"
+    - Нажать на кнопку "Авторизовать"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+
+- summary: |
+    Неудачная аутентификация пользователя с пустым имейлом
+  requirement: |
+    При оставлении пустого поля с имейлом пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = "" / password = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Ввести пароль
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Email required"
+
+- summary: |
+    Неудачная аутентификация пользователя с пустым паролем
+  requirement: |
+    При оставлении пустого поля с паролем пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = examplemail4tests@gmail.com / password = ""
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Password required"
+
+- summary: |
+    Неудачная аутентификация пользователя с незарегистрированным имейлом
+  requirement: |
+    При введении незарегистрированного имейла пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = example@example.com / password = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Ввести имейл
+    - Ввести пароль
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "EMAIL_NOT_FOUND"
+
+- summary: |
+    Успешное восстановление пароля
+  requirement: |
+    При восстановлении пароля через форму "Reset your password" пользователь должен войти в систему с новым паролем
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = examplemail4tests@gmail.com
+    password = pas$word
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+    - Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    - Открыть письмо и перейти по указанной в нем ссылке
+    - В окне "Reset your password" ввести новый пароль
+    - Нажать на кнопку "SAVE"
+    - Перейти во вкладку браузера игры https://codebattle.hexlet.io/remind_password
+    - Нажать на кнопку "Sign in"
+    - Ввести имейл
+    - Ввести пароль
+    - Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+
+- summary: |
+    Неудачное восстановление пароля с пустым имейлом
+  requirement: |
+    При оставлении пустого поля с имейлом пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = ""
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Email required"
+
+- summary: |
+    Неудачное восстановление пароля с невалидным имейлом (без домена)
+  requirement: |
+    При введении невалидного имейла (без домена) пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = example@
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Invalid email"
+
+- summary: |
+    Неудачное восстановление пароля с невалидным имейлом (без локальной части)
+  requirement: |
+    При введении невалидного имейла (без локальной части) пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = @gmail.com
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Invalid email"
+
+- summary: |
+    Неудачное восстановление пароля с незарегистрированным имейлом
+  requirement: |
+    При введении незарегистрированного имейла пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = example@example.com
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "EMAIL_NOT_FOUND"
+
+- summary: |
+    Неудачное восстановление пароля с пустым паролем
+  requirement: |
+    При оставлении пустого поля с паролем пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+  test-data: |
+    email = examplemail4tests@gmail.com
+    password = ""
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+    - Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    - Открыть письмо и перейти по указанной в нем ссылке
+    - В окне "Reset your password" ввести новый пароль
+    - Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Enter your password"
+
+- summary: |
+    Неудачное восстановление пароля с паролем короче требуемого
+  requirement: |
+    При введении пароля короче требуемого пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+  test-data: |
+    email = examplemail4tests@gmail.com
+    password = pas
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+    - Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    - Открыть письмо и перейти по указанной в нем ссылке
+    - В окне "Reset your password" ввести новый пароль
+    - Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password must be at least 6 characters long"
+
+- summary: |
+    Неудачное восстановление пароля с паролем длиннее требуемого
+  requirement: |
+    При введении пароля длиннее требуемого пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+  test-data: |
+    email = examplemail4tests@gmail.com
+    password = pas$word123456789
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+    - Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    - Открыть письмо и перейти по указанной в нем ссылке
+    - В окне "Reset your password" ввести новый пароль
+    - Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password must be no more than 16 characters long"
+
+- summary: |
+    Неудачное восстановление пароля с паролем без спецсимвола
+  requirement: |
+    При введении пароля без спецсимвола пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+  test-data: |
+    email = examplemail4tests@gmail.com
+    password = password
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+    - Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    - Открыть письмо и перейти по указанной в нем ссылке
+    - В окне "Reset your password" ввести новый пароль
+    - Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password should contain at least one special character"
+
+- summary: |
+    Неудачное восстановление пароля с пробелом в пароле
+  requirement: |
+    При введении пароля с пробелом пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
+  test-data: |
+    email = examplemail4tests@gmail.com
+    password = pass word
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Нажать на "Forgot your password?"
+    - Ввести имейл
+    - Нажать на кнопку "Submit"
+    - Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    - Открыть письмо и перейти по указанной в нем ссылке
+    - В окне "Reset your password" ввести новый пароль
+    - Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password сan't contain empty symbols"
