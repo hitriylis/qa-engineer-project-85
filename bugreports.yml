@@ -1,0 +1,105 @@
+---
+- summary: |
+    Не работает аутентификация пользователя по аккаунту Discord
+  environment: |
+    Google Chrome 134.0.6998.36 (Официальная сборка) (64 бит)
+    ОС Windows 11 23H2 22631.5039
+    Coddbattle version: 9425fb5
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Нажать на кнопку "Sign in"
+    3. Нажать на кнопку "Sign in with Discord"
+    4. Нажать на кнопку "Авторизовать"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+  actual-result: |
+    На странице появляется ошибка "SOMETHING_WENT_WRONG, reason: %FunctionClauseError{module: URI, function: :decode_query, arity: 3, kind: nil, args: nil, clauses: nil}"" (см. src/bugs/bug_discord.jpg)
+
+- summary: |
+    Не корректно работает восстановление пароля
+  environment: |
+    Google Chrome 134.0.6998.36 (Официальная сборка) (64 бит)
+    ОС Windows 11 23H2 22631.5039
+    Coddbattle version: 9425fb5
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Нажать на кнопку "Sign in"
+    3. Нажать на "Forgot your password?"
+    4. Ввести имейл
+    5. Нажать на кнопку "Submit"
+    6. Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    7. Открыть письмо и перейти по указанной в нем ссылке
+    8. В окне "Reset your password" ввести новый пароль
+    9. Нажать на кнопку "SAVE"
+    10. Перейти во вкладку браузера игры https://codebattle.hexlet.io/remind_password
+    11. Нажать на кнопку "Sign in"
+    12. Ввести имейл
+    13. Ввести пароль
+    14. Нажать на кнопку "Submit"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+  actual-result: |
+    Пользователь входит в систему, но вместо редиректа на страницу лобби https://codebattle.hexlet.io/#lobby в браузере отображается форма "Forget your password?" (см. src/bugs/bug_sign in.jpg)
+
+- summary: |
+    При восстановлении пароль может быть длиннее требуемого
+  environment: |
+    Google Chrome 134.0.6998.36 (Официальная сборка) (64 бит)
+    ОС Windows 11 23H2 22631.5039
+    Coddbattle version: 9425fb5
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Нажать на кнопку "Sign in"
+    3. Нажать на "Forgot your password?"
+    4. Ввести имейл
+    5. Нажать на кнопку "Submit"
+    6. Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    7. Открыть письмо и перейти по указанной в нем ссылке
+    8. В окне "Reset your password" ввести новый пароль
+    9. Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password must be no more than 16 characters long"
+  actual-result: |
+    Пользователю отображается сообщение об успешной смене пароля и возможности войти в систему с новым паролем (см. src/bugs/bug_password.jpg)
+
+- summary: |
+    При восстановлении пароль может быть без спецсимвола
+  environment: |
+    Google Chrome 134.0.6998.36 (Официальная сборка) (64 бит)
+    ОС Windows 11 23H2 22631.5039
+    Coddbattle version: 9425fb5
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Нажать на кнопку "Sign in"
+    3. Нажать на "Forgot your password?"
+    4. Ввести имейл
+    5. Нажать на кнопку "Submit"
+    6. Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    7. Открыть письмо и перейти по указанной в нем ссылке
+    8. В окне "Reset your password" ввести новый пароль
+    9. Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password should contain at least one special character"
+  actual-result: |
+    Пользователю отображается сообщение об успешной смене пароля и возможности войти в систему с новым паролем (см. src/bugs/bug_password.jpg)
+
+- summary: |
+    При восстановлении пароль может быть с пробелом
+  environment: |
+    Google Chrome 134.0.6998.36 (Официальная сборка) (64 бит)
+    ОС Windows 11 23H2 22631.5039
+    Coddbattle version: 9425fb5
+  steps-to-reproduce: |
+    1. Зайти на страницу https://codebattle.hexlet.io/
+    2. Нажать на кнопку "Sign in"
+    3. Нажать на "Forgot your password?"
+    4. Ввести имейл
+    5. Нажать на кнопку "Submit"
+    6. Во входящих письмах указанного имейла найти письмо от аккаунта "noreply@codebattle-5f929.firebaseapp.com"
+    7. Открыть письмо и перейти по указанной в нем ссылке
+    8. В окне "Reset your password" ввести новый пароль
+    9. Нажать на кнопку "SAVE"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "The password сan't contain empty symbols"
+  actual-result: |
+    Пользователю отображается сообщение об успешной смене пароля и возможности войти в систему с новым паролем (см. src/bugs/bug_password.jpg)
