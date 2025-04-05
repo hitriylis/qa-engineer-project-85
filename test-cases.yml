@@ -450,7 +450,7 @@
     При оставлении пустого поля с имейлом пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
     email = ""
   steps:
@@ -466,7 +466,7 @@
     При введении невалидного имейла (без домена) пользователь должен получить сообщение об ошибке
   prerequisites: |
     Открыта главная страница https://codebattle.hexlet.io/
-    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    Зарегистрирован пользователь с данными: nickname = nickname_4_tests / email = examplemail4tests@gmail.com / password = pas$word  / password confirmation = pas$word
   test-data: |
     email = example@
   steps:
