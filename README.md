@@ -6,11 +6,11 @@
 
 ## Description
 
-The project involves testing the Codebattle project.
+The project involves testing the **Codebattle website**.
 
-Codebattle - is a game where two programmers simultaneously solve the same task using different programming languages. The one who finishes first wins.
+**Codebattle** - is a game where two programmers simultaneously solve the same task using different programming languages. The one who finishes first wins.
 
-Key features of the project:
+Key features of the game:
 
 - Compete in solving tasks for speed against another player. Both players can see each other's code editors and test outputs, and they can switch programming languages during the game
 - You can play with anyone — a random opponent, a bot, or a friend (the game will be available via a link).
