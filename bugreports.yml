@@ -13,7 +13,7 @@
   expected-result: |
     Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
   actual-result: |
-    На странице появляется ошибка "SOMETHING_WENT_WRONG, reason: %FunctionClauseError{module: URI, function: :decode_query, arity: 3, kind: nil, args: nil, clauses: nil}"" (см. src/bugs/bug_discord.jpg)
+    На странице появляется ошибка "SOMETHING_WENT_WRONG, reason: %FunctionClauseError{module: URI, function: :decode_query, arity: 3, kind: nil, args: nil, clauses: nil}" (см. src/bugs/bug_discord.jpg)
 
 - summary: |
     Не корректно работает восстановление пароля
@@ -42,7 +42,7 @@
     Пользователь входит в систему, но вместо редиректа на страницу лобби https://codebattle.hexlet.io/#lobby в браузере отображается форма "Forget your password?" (см. src/bugs/bug_sign in.jpg)
 
 - summary: |
-    При восстановлении пароль может быть длиннее требуемого
+    При восстановлении пароль может быть длиннее 16 символов
   environment: |
     Google Chrome 134.0.6998.36 (Официальная сборка) (64 бит)
     ОС Windows 11 23H2 22631.5039
