@@ -31,6 +31,26 @@ The website testing is carried out in several stages:
 - Preparing a bug report and a test report
 - Creating test documentation in Qase.io
 
+## Demonstration:
+
+- Test cases:
+
+  ![Laptop size](./src/demo/test-cases.jpg "Test cases")
+
+---
+
+- Test runs:
+
+  ![Tablet size](./src/demo/test-runs.jpg "Test runs")
+
+---
+
+- Bug reports:
+
+  ![Mobile size](./src/demo/bug-reports.jpg "Bug reports")
+
+---
+
 ### Click [here](https://codebattle.hexlet.io/) to view Codebattle.
 
 ### Click [here](https://drive.google.com/file/d/1-bKdhDkkGSlt3jxbgV9PJV17EabRMJ_j/view?usp=sharing) to view the test cases on Qase.io.
