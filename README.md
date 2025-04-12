@@ -53,6 +53,6 @@ The website testing is carried out in several stages:
 
 ### Click [here](https://codebattle.hexlet.io/) to view Codebattle.
 
-### Click [here](https://drive.google.com/file/d/1-bKdhDkkGSlt3jxbgV9PJV17EabRMJ_j/view?usp=sharing) to view the test cases on Qase.io.
+### Click [here](https://drive.google.com/file/d/1-GgJs6HZRRSecTvxt8ad0AwUSqfsseSO/view?usp=sharing) to view the test cases on Qase.io.
 
 ### Click [here](https://drive.google.com/file/d/1n4o9le-I-QwzJwy4-x7kyJhY-Tgti6Fx/view?usp=sharing) to view one of the test runs on Qase.io.
