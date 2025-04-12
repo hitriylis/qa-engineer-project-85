@@ -442,6 +442,25 @@
   expected-result: |
     Пользователь должен получить сообщение с ошибкой "Password required"
 
+- summary: |
+    Успешный выход из аккаунта
+  requirement: |
+    При нажатии на "Sign Out" в меню аккаунта в хедере пользователь должен выходить из системы
+  prerequisites: |
+    Открыта главная страница https://codebattle.hexlet.io/
+    Зарегистрирован пользователь с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    email = nickname@gmail.com / password = pas$w0rd
+  steps:
+    - Нажать на кнопку "Sign in"
+    - Ввести email
+    - Ввести пароль
+    - Нажать на кнопку "Submit"
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Sign Out"
+  expected-result: |
+    Пользователь должен выйти из систем с редиректом на главную страницу https://codebattle.hexlet.io/
+
 # Восстановление пароля
 - summary: |
     Успешное восстановление пароля
@@ -641,3 +660,274 @@
     - Нажать на кнопку "SAVE"
   expected-result: |
     Пользователь должен получить сообщение с ошибкой "The password сan't contain empty symbols"
+
+# Изменение настроек профиля
+- summary: |
+    Успешное изменение никнейма
+  requirement: |
+    При введении валидного никнейма настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = nickname_123456
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" ввести новый никнейм
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Неудачное изменение никнейма: никнейм уже используется
+  requirement: |
+    При введении уже зарегистрированного другим пользователем никнейма пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = nickname_4_tests
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" ввести новый никнейм
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Has already been taken". Кнопка "Save" должна стать неактивной
+
+- summary: |
+    Неудачное изменение никнейма: пустое поле "Your name"
+  requirement: |
+    При оставлении поля "Your name" пустым пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    no data
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - Оставить пустым поле "Your name"
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Has already been taken". Кнопка "Save" должна стать неактивной
+
+- summary: |
+    Неудачное изменение никнейма: никнейм короче 3 символов
+  requirement: |
+    При введении никнейма короче 3 символов пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = ni
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" ввести новый никнейм
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should be at least 3 characters". Кнопка "Save" должна стать неактивной
+
+- summary: |
+    Неудачное изменение никнейма: никнейм длиннее 16 символов
+  requirement: |
+    При введении никнейма длиннее 16 символов пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = nickname_12345678
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" ввести новый никнейм
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should be 16 character(s) or less". Кнопка "Save" должна стать неактивной
+
+- summary: |
+    Неудачное изменение никнейма: использование кириллицы в никнейме
+  requirement: |
+    При введении никнейма с кириллицей пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = nickname_ф
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" ввести новый никнейм
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should contain Latin letters, numbers and underscores. Only begin with latin letter". Кнопка "Save" должна стать неактивной
+
+- summary: |
+    Неудачное изменение никнейма: отсутствие латинской буквы в начале никнейма
+  requirement: |
+    При введении никнейма без латинской буквы в начале пользователь должен получить сообщение об ошибке
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    nickname = 1_nickname
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your name" ввести новый никнейм
+  expected-result: |
+    Пользователь должен получить сообщение с ошибкой "Should contain Latin letters, numbers and underscores. Only begin with latin letter". Кнопка "Save" должна стать неактивной
+
+- summary: |
+    Успешное изменение языка программирования
+  requirement: |
+    При выборе другого языка программирования настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    Your weapon = Python
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your weapon" выбрать новый язык программирования
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное добавление клана
+  requirement: |
+    При вводе названия клана настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    Your clan = Wu-Tang Clan
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your clan" ввести название клана
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное изменение названия клана
+  requirement: |
+    При вводе названия клана настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    В настройках профиля зарегистрировано название клана: Your clan = Wu-Tang clan
+  test-data: |
+    Your clan = Wu-Tang
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В поле "Your clan" ввести новое название клана
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное изменение типа звуков
+  requirement: |
+    При выборе другого типа звуков настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    Select sound type = CS
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В списке "Select sound type" выбрать новый тип звуков
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное увеличение уровня громкости
+  requirement: |
+    При увеличении уровня громкости настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    no data
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - На шкале "Select sound level" нажать ЛКМ правее текущего положения ползунка
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Звуковой сигнал должен звучать громче при перемещении ползунка вправо. Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное уменьшение уровня громкости
+  requirement: |
+    При уменьшении уровня громкости настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    no data
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - На шкале "Select sound level" нажать ЛКМ левее текущего положения ползунка
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Звуковой сигнал должен звучать тише при перемещении ползунка влево. Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное отключение звука
+  requirement: |
+    При отключении звука настройки должны изменяться
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+  test-data: |
+    Select sound type = Silent
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - В списке "Select sound type" выбрать новый тип звуков
+    - Нажать на кнопку "Save"
+  expected-result: |
+    Шкала "Select sound level" должна стать не активной. Пользователь должен получить сообщение об успешной смене настроек "Your settings has been changed"
+
+- summary: |
+    Успешное подключение аккаунта GitHub
+  requirement: |
+    При подключении аккаунта GitHub пользователь должен войти в систему
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    В браузере выполнен вход в аккаунт GitHub
+  test-data: |
+    Select sound type = Silent
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - Нажать на "Link Github"
+    - Нажать на кнопку "Authorize vtm9"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
+
+- summary: |
+    Успешное подключение аккаунта Discord
+  requirement: |
+    При подключении аккаунта Discord пользователь должен войти в систему
+  prerequisites: |
+    Открыта страница лобби https://codebattle.hexlet.io/#lobby
+    Выполнен вход на сайт с данными: nickname = nickname / email = nickname@gmail.com / password = pas$w0rd  / password confirmation = pas$w0rd
+    В браузере выполнен вход в аккаунт Discord
+  test-data: |
+    Select sound type = Silent
+  steps:
+    - Нажать на правый угол хедера с никнеймом и аватаром пользователя
+    - Нажать на "Settings"
+    - Нажать на "Link Discord"
+    - Нажать на кнопку "Авторизовать"
+  expected-result: |
+    Пользователь должен войти в систему с редиректом на страницу лобби https://codebattle.hexlet.io/#lobby
